@@ -16,6 +16,7 @@ $ echo "source ~/.vim/basic.vim" >> ~/.vimrc
 # TODOs
 * Add NerdTree [https://github.com/scrooloose/nerdtree]
 * Python
+* Add indentation guides
 
 # References
 [Dougblack.io](https://dougblack.io/words/a-good-vimrc.html)
