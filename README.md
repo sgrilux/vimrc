@@ -1,7 +1,16 @@
 My vimrc settings
 -----------------
 
+# Description
+
+TODO: Add a description and more comments
+
 # Installation
+
+## Dependencies
+
+* [Pathogen](https://github.com/tpope/vim-pathogen) - For plugin manager
+* [gundo](http://github.com/sjl/gundo.vim) - Plugin for undo tree
 
 ```bash
 $ mkdir -p ~/.vim/{autoload,bundle}
