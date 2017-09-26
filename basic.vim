@@ -23,8 +23,6 @@ nmap <leader>q :q!<cr>  " Fast quit - no saving
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-" toggle gundo
-nnoremap <leader>u :GundoToggle<CR>
 
 " save session
 nnoremap <leader>s :mksession<CR>
@@ -60,6 +58,11 @@ set magic		    " Turn magic on for regular expressions
 
 set showmatch		" show matching brackets when cursor is over them
 
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" toggle NERDTreee
+nnoremap <leader>n :NERDTreeToggle<CR>
 " }}}
 
 " => Color and Fonts {{{
