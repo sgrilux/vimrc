@@ -29,6 +29,6 @@ $ echo "source ~/.vim/basic.vim" >> ~/.vimrc
 * Add indentation guides
 
 # References
-[Dougblack.io](https://dougblack.io/words/a-good-vimrc.html)
-[VIM tips](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
+- [Dougblack.io](https://dougblack.io/words/a-good-vimrc.html)
+- [VIM tips](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
