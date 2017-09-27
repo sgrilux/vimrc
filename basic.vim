@@ -71,7 +71,7 @@ syntax enable		" Enable syntax highlighting
 
 " Set theme
 try
-	colorscheme elflord
+	colorscheme slate
 catch
 endtry
 
@@ -86,6 +86,7 @@ set paste           " Don't mess up when pasting
 set expandtab		" Replace <TAB>s with spaces
 set tabstop=4		" Replace 1 tab with 4 spaces
 set softtabstop=4	"
+set shiftwidth=4
 set smarttab
 
 set autoindent
@@ -125,8 +126,8 @@ noremap <Leader>m mmhmt:%s/<C-V><cr>//ge<cr> 'tzt'm
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                \:call <SID>StripTrailingWhitespaces()
+    "autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+    "            \:call <SID>StripTrailingWhitespaces()
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
