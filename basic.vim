@@ -30,9 +30,6 @@ nnoremap <leader>s :mksession<CR>
 set paste
 set number
 
-" Set the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
 " }}}
 
 " => User Interface {{{
@@ -45,6 +42,7 @@ set wildmenu        " Turn on the Wild Menu
 set cursorline		" Show current position
 
 set cmdheight=2		" height of the command bar
+set laststatus=2    " alwats show the status line
 
 set hlsearch		" Highlight search results
 set incsearch		" search as characters are entered
@@ -100,20 +98,19 @@ set colorcolumn=80  " Show the column 80
 nnoremap gV `[v`]
 
 " Git Status line
-"set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
-"set statusline+=%#LineNr#
-"set statusline+=\ %f
-"set statusline+=%m\
-"set statusline+=%=
-"set statusline+=%#CursorColumn#
-"set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\[%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\
-
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
 
 " }}}
 
