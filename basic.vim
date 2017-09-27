@@ -7,9 +7,6 @@ filetype plugin indent on
 
 set history=500         " how many lines of history VIM has to remember
 
-filetype plugin on
-filetype indent on
-
 set autoread
 
 let mapleader=","
@@ -42,7 +39,18 @@ set wildmenu        " Turn on the Wild Menu
 set cursorline		" Show current position
 
 set cmdheight=2		" height of the command bar
+
+" Status line
 set laststatus=2    " alwats show the status line
+set statusline=%f
+set statusline+=\ [%{StatuslineGit()}]
+set statusline+=%#CursorColumn#
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 
 set hlsearch		" Highlight search results
 set incsearch		" search as characters are entered
@@ -97,20 +105,6 @@ set colorcolumn=80  " Show the column 80
 " highlight last inserted text
 nnoremap gV `[v`]
 
-" Git Status line
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\
 
 " }}}
 
