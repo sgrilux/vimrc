@@ -27,6 +27,8 @@ nnoremap <leader>s :mksession<CR>
 set paste
 set number
 
+set encoding=utf-8
+
 " }}}
 
 " => User Interface {{{
@@ -131,11 +133,11 @@ set writebackup
 " Remove the ^M
 noremap <Leader>m mmhmt:%s/<C-V><cr>//ge<cr> 'tzt'm
 
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    "autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-    "            \:call <SID>StripTrailingWhitespaces()
     autocmd FileType java setlocal noexpandtab
     autocmd FileType java setlocal list
     autocmd FileType java setlocal listchars=tab:+\ ,eol:-
@@ -179,6 +181,24 @@ function! StatuslineGit()
     let l:branchname = GitBranch()
     return strlen(l:branchname)>0?'  '.l:branchname.' ':''
 endfunction
+" }}}
+
+" => Python {{{
+
+let python_highlight_all = 1
+
+augroup pyconfiggroup
+    autocmd BufWritePost *.py call Flake8()
+    au BufNewFile,BufRead *.py setlocal tabstop=4
+    au BufNewFile,BufRead *.py setlocal softtabstop=4
+    au BufNewFile,BufRead *.py setlocal shiftwidth=4
+    au BufNewFile,BufRead *.py setlocal textwidth=79
+    au BufNewFile,BufRead *.py setlocal expandtab
+    au BufNewFile,BufRead *.py setlocal autoindent
+    au BufNewFile,BufRead *.py setlocal fileformat=unix
+augroup END
+
+
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
