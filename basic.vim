@@ -43,12 +43,11 @@ set cmdheight=2		" height of the command bar
 " Status line
 set laststatus=2    " alwats show the status line
 set statusline=%f
-set statusline+=\ [%{StatuslineGit()}]
-set statusline+=%#CursorColumn#
 set statusline+=%=
+set statusline+=\[%{StatuslineGit()}]
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
+set statusline+=\ [%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 
