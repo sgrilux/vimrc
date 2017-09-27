@@ -20,6 +20,8 @@ $ git clone https://github.com/sgrilux/vimrc.git ~/.myvimrc
 $ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 $ git clone http://github.com/sjl/gundo.vim.git ~/.vim/bundle/gundo
 $ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+$ sudo -H pip install flake8
+$ git clone https://github.com/nvie/vim-flake8.git ~/.vim/bundle/vim-flake8
 $ ln -s ~/.myvimrc/basic.vim ~/.vim/basic.vim
 $ echo "source ~/.vim/basic.vim" >> ~/.vimrc
 ```
