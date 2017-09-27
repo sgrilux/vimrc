@@ -23,15 +23,15 @@ nmap <leader>q :q!<cr>  " Fast quit - no saving
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-
 " save session
 nnoremap <leader>s :mksession<CR>
 
+
 set paste
-
-nnoremap <leader>tn :call ToggleNumber()<CR>
-
 set number
+
+" Set the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 " }}}
 
@@ -57,6 +57,8 @@ set lazyredraw		" Redraw only when needed
 set magic		    " Turn magic on for regular expressions
 
 set showmatch		" show matching brackets when cursor is over them
+
+nnoremap <leader>tn :call ToggleNumber()<CR>
 
 " toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -95,6 +97,22 @@ set colorcolumn=80  " Show the column 80
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" Git Status line
+"set statusline+=%#PmenuSel#
+"set statusline+=%{StatuslineGit()}
+"set statusline+=%#LineNr#
+"set statusline+=\ %f
+"set statusline+=%m\
+"set statusline+=%=
+"set statusline+=%#CursorColumn#
+"set statusline+=\ %y
+"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\[%{&fileformat}\]
+"set statusline+=\ %p%%
+"set statusline+=\ %l:%c
+"set statusline+=\
+
 
 " }}}
 
@@ -162,6 +180,14 @@ function! ToggleNumber()
     endif
 endfunction
 
+function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null| tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+    let l:branchname = GitBranch()
+    return strlen(l:branchname)>0?'  '.l:branchname.' ':''
+endfunction
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
