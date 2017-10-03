@@ -72,6 +72,7 @@ nnoremap <leader>u :GundoToggle<CR>
 
 " toggle NERDTreee
 nnoremap <leader>n :NERDTreeToggle<CR>
+
 " }}}
 
 " => Color and Fonts {{{
@@ -105,6 +106,17 @@ set colorcolumn=80  " Show the column 80
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" Indent guidelines settings
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_indent_levels = 30
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_guide_size = 1
+"Use this option to control whether the default mapping (<Leader>ig) gets set.
+let g:indent_guides_default_mapping = 1
+:nmap <silent> <Leader>ie <Plug>IndentGuidesEnable
+:nmap <silent> <Leader>id <Plug>IndentGuidesDisable
 
 
 " }}}
